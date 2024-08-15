@@ -2,6 +2,7 @@ package aleksey.wallet.mapper;
 
 import aleksey.wallet.dto.WalletRequest;
 import aleksey.wallet.dto.WalletResponse;
+import aleksey.wallet.error.ConflictError;
 import aleksey.wallet.model.Wallet;
 import aleksey.wallet.type_operation.Operation;
 
@@ -12,6 +13,9 @@ public class WalletMapper {
             wallet.setBalance(wallet.getBalance() + request.getAmount());
         }
         if (request.getOperationType() == Operation.WITHDRAW) {
+            if (wallet.getBalance() - request.getAmount() <= 0) {
+                throw new ConflictError("there are not enough funds on the balance sheet");
+            }
             wallet.setBalance(wallet.getBalance() - request.getAmount());
         }
         return wallet;

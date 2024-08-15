@@ -4,6 +4,7 @@ package aleksey.wallet.controller;
 import aleksey.wallet.dto.WalletRequest;
 import aleksey.wallet.dto.WalletResponse;
 import aleksey.wallet.service.WalletService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class WalletController {
     private final WalletService walletService;
 
     @PostMapping("/wallet")
-    public void updateBalance(@RequestBody WalletRequest request) {
+    public void updateBalance(@RequestBody @Valid WalletRequest request) {
         log.info("Пришел POST запрос api/v1/wallet с телом: {}", request);
         walletService.updateBalance(request);
         log.info("Отправлен ответ 200 без тела");
@@ -33,4 +34,6 @@ public class WalletController {
         log.info("Отправлен ответ для GET запроса /api/v1/wallets/{} с телом: {}", uuid, response);
         return response;
     }
+
+
 }

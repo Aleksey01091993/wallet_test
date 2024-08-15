@@ -25,6 +25,7 @@ public class WalletService {
     }
 
     public WalletResponse getBalance(UUID walletUUID) {
+
         return WalletMapper.getBalance(getWallet(walletUUID));
     }
 
@@ -33,4 +34,6 @@ public class WalletService {
                 () -> new NotFoundException("Wallet not found")
         );
     }
+
+
 }

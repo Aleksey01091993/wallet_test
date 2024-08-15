@@ -11,11 +11,12 @@ import java.util.UUID;
 @Data
 @Entity
 @Builder
-@Table(name = "events")
+@Table(name = "wallet")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Wallet {
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID uuid;
     @Column(name = "balance")
