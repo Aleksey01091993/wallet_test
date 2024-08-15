@@ -1,6 +1,6 @@
 package aleksey.wallet;
 
-import aleksey.wallet.controller.WalletController;
+import aleksey.wallet.controller.impl.WalletControllerImpl;
 import aleksey.wallet.dto.WalletRequest;
 import aleksey.wallet.dto.WalletResponse;
 import aleksey.wallet.service.WalletService;
@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
-@WebMvcTest(WalletController.class)
+@WebMvcTest(WalletControllerImpl.class)
 class WalletApplicationTests {
 
     @Autowired
