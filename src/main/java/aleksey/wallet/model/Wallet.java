@@ -14,7 +14,6 @@ import java.util.UUID;
 @Entity
 @Builder
 @Table(name = "wallet")
-@NoArgsConstructor
 @AllArgsConstructor
 public class Wallet {
     @Id

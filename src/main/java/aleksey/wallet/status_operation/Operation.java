@@ -1,4 +1,4 @@
-package aleksey.wallet.type_operation;
+package aleksey.wallet.status_operation;
 
 public enum Operation {
     DEPOSIT, WITHDRAW
