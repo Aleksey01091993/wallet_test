@@ -1,10 +1,10 @@
 package aleksey.wallet.mapper;
 
-import aleksey.wallet.status_operation.Operation;
 import aleksey.wallet.dto.WalletRequest;
 import aleksey.wallet.dto.WalletResponse;
 import aleksey.wallet.error.ConflictError;
 import aleksey.wallet.model.Wallet;
+import aleksey.wallet.status_operation.Operation;
 
 
 public class WalletMapper {
